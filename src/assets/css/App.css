@@ -1,0 +1,10 @@
+:root {
+    --vh: 100%;
+}
+
+.App{
+    background-color: #ffffdf;
+    display: auto;
+    height: calc(var(--vh, 1vh) * 100);
+
+}
