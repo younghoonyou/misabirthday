@@ -10,9 +10,11 @@
 
 # production
 /build
-
+jsconfig.json
 # misc
 .DS_Store
+.prettierrc
+.vscode
 .env.local
 .env.development.local
 .env.test.local
