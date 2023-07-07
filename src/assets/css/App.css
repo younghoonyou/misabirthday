@@ -1,10 +1,25 @@
 :root {
-    --vh: 100%;
+  /* Screen size */
+  --vh: 100%;
+  /*Color*/
+  --primaryColor: #5c6e56;
+  --secondaryColor: #94a38e;
+  --lightColor: #9cb395;
+  --primaryDarkColor: #3e4239;
+  --brownColor: #6c5d53;
+  --lightbrownColor: #dfd3c3;
+  --buttonRedColor: #d47878;
+  --dangerColor: #cb5050;
+  --lightBackgroundColor: #c7b199;
+  --brownBackgroundColor: #9f8473;
+  --grayColor: #d9d9d9;
+  --darkGrayColor: #8c8c8c;
+  --ligintBackground: #d9d9d9;
+  --lightGreenColor: #c9d8b7;
 }
 
-.App{
-    background-color: #ffffdf;
-    display: auto;
-    height: calc(var(--vh, 1vh) * 100);
-
+.App {
+  background-color: #ffffdf;
+  display: auto;
+  height: calc(var(--vh, 1vh) * 100);
 }
