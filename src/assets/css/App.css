@@ -23,3 +23,13 @@
   display: auto;
   height: calc(var(--vh, 1vh) * 100);
 }
+
+.Header {
+  background-color: #e5e584;
+  height: calc(var(--vh, 1vh) * 10);
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.Body {
+  height: calc(var(--vh, 1vh) * 90);
+}
