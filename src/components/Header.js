@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 const Header = () => {
   const [smile, setSmile] = useState(false);
   const clickMisa = () => {
@@ -27,6 +27,22 @@ const Header = () => {
       )}
       <img alt='light' src='images/light.png' width='70' height='70' />
       <text className='Japanese-Font'>私は可愛い美紗！</text>
+      <div className='Duck-Moving'>
+        <img
+          alt='walking-duck'
+          src='images/walking-duck.gif'
+          width='60'
+          height='60'
+        />
+      </div>
+      <img
+        className='Cake'
+        alt='cake'
+        src='images/cake.gif'
+        width='70'
+        height='70'
+      />
+      <text className='Japanese-Font'>お誕生日おめでとう</text>
     </div>
   );
 };

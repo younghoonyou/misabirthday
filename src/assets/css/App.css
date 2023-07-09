@@ -27,6 +27,7 @@
 .Header {
   background-color: #fff59d;
   height: calc(var(--vh, 1vh) * 10);
+  width: 100%;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   display: flex;
@@ -42,4 +43,13 @@
   align-items: center;
   justify-content: center;
   height: calc(var(--vh, 1vh) * 90);
+}
+
+.Cake {
+  display: flex;
+  align-items: flex-end;
+}
+
+.Duck-Moving {
+  width: 60%;
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import '../assets/css/App.css';
 import '../assets/css/Quiz.css';
 import BorderLinearProgress from '../components/quiz/progressBar';
@@ -24,7 +24,9 @@ const QuizPage = () => {
     <Quiz5 setGoNext={setGoNext} />,
   ]);
   const updateIndex = () => {
-    setQuizIndex(quizIndex + 1);
+    if (!goNext) {
+      setQuizIndex(quizIndex + 1);
+    }
     setGoNext(true);
   };
   useEffect(() => {
@@ -43,14 +45,15 @@ const QuizPage = () => {
             setIndex={setQuizIndex}
             setClick={setGoNext}
           />
-          <Button
-            variant='contained'
-            endIcon={<SendIcon />}
-            onClick={updateIndex}
+          <img
+            className='Duck-Button'
+            alt='duck'
+            src='images/duck.png'
+            width={70}
             disabled={goNext}
-          >
-            Send
-          </Button>
+            style={{opacity: goNext ? 0.5 : 1}}
+            onClick={updateIndex}
+          />
           <div className='Progress-Bar'>
             <BorderLinearProgress
               variant='determinate'

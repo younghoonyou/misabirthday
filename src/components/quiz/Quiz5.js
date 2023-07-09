@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 const Quiz5 = (props) => {
   const [selectedOption, setSelectedOption] = useState(null);
-  const { setGoNext } = props;
+  const {setGoNext} = props;
   const handleOptionChange = (e) => {
     const newValue = e.target.value;
     setSelectedOption(newValue === selectedOption ? null : newValue);

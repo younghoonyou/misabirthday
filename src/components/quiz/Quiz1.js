@@ -22,9 +22,9 @@ const Quiz1 = (props) => {
           checked={selectedOption === 'option1'}
           onChange={handleOptionChange}
         />
-        <label className='Japanese-Font'> 京都</label>
-        <label className='Korean-Font'> 쿄토</label>
-        <label className='English-Font'> Kyoto</label>
+        <label className='Japanese-Font'> 京都 / </label>
+        <label className='Korean-Font'> 쿄토 </label>
+        <label className='English-Font'> / Kyoto</label>
       </div>
       <div className='Check-Box'>
         <input
@@ -33,9 +33,9 @@ const Quiz1 = (props) => {
           checked={selectedOption === 'option2'}
           onChange={handleOptionChange}
         />
-        <label className='Japanese-Font'> 京都</label>
-        <label className='Korean-Font'> 쿄토</label>
-        <label className='English-Font'> Kyoto</label>
+        <label className='Japanese-Font'> 東京 / </label>
+        <label className='Korean-Font'> 토쿄</label>
+        <label className='English-Font'> / Tokyo</label>
       </div>
       <div className='Check-Box'>
         <input
@@ -44,9 +44,9 @@ const Quiz1 = (props) => {
           checked={selectedOption === 'option3'}
           onChange={handleOptionChange}
         />
-        <label className='Japanese-Font'> 京都</label>
-        <label className='Korean-Font'> 쿄토</label>
-        <label className='English-Font'> Kyoto</label>
+        <label className='Japanese-Font'> 大阪 / </label>
+        <label className='Korean-Font'> 오사카</label>
+        <label className='English-Font'> / Osaka</label>
       </div>
       <div className='Check-Box'>
         <input
@@ -55,9 +55,9 @@ const Quiz1 = (props) => {
           checked={selectedOption === 'option4'}
           onChange={handleOptionChange}
         />
-        <label className='Japanese-Font'> 京都</label>
-        <label className='Korean-Font'> 쿄토</label>
-        <label className='English-Font'> Kyoto</label>
+        <label className='Japanese-Font'> 北海道 / </label>
+        <label className='Korean-Font'> 훗카이도</label>
+        <label className='English-Font'> / Hokkaido</label>
       </div>
     </div>
   );
