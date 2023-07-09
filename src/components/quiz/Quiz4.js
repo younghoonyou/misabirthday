@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 
 const Quiz4 = (props) => {
   const [selectedOption, setSelectedOption] = useState(null);
+  const { setGoNext } = props;
   const handleOptionChange = (e) => {
     const newValue = e.target.value;
     setSelectedOption(newValue === selectedOption ? null : newValue);
+    setGoNext(false);
   };
 
   return (
     <div>
       <div className='Japanese-Font'>美紗の出生地は？</div>
-      <div className='Korean-Font'>미사 출생지는?</div>
+      <div className='Korean-Font'>미사 출생지는4?</div>
       <div className='English-Font'>Where was Misa born ?</div>
       <div className='Check-Box'>
         <input

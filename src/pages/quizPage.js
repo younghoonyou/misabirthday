@@ -8,26 +8,55 @@ import Quiz3 from '../components/quiz/Quiz3';
 import Quiz4 from '../components/quiz/Quiz4';
 import Quiz5 from '../components/quiz/Quiz5';
 import QuizBox from '../components/quiz/QuizBox';
+import SendIcon from '@mui/icons-material/Send';
+import Button from '@mui/material/Button';
+import Header from '../components/Header';
+
 const QuizPage = () => {
   const [progress, setProgress] = useState(10);
   const [quizIndex, setQuizIndex] = useState(0);
+  const [goNext, setGoNext] = useState(true);
   const [quiz, setQuizs] = useState([
-    <Quiz1 />,
-    <Quiz2 />,
-    <Quiz3 />,
-    <Quiz4 />,
-    <Quiz5 />,
+    <Quiz1 setGoNext={setGoNext} />,
+    <Quiz2 setGoNext={setGoNext} />,
+    <Quiz3 setGoNext={setGoNext} />,
+    <Quiz4 setGoNext={setGoNext} />,
+    <Quiz5 setGoNext={setGoNext} />,
   ]);
-  useEffect(() => {});
+  const updateIndex = () => {
+    setQuizIndex(quizIndex + 1);
+    setGoNext(true);
+  };
+  useEffect(() => {
+    console.log(quiz.length);
+    console.log(quizIndex);
+  });
   return (
     <div className='App'>
-      <div className='Header'></div>
+      <Header />
       <div className='Body'>
+        <div>Do you know about Misa well?🧐🐣</div>
         <div className='Question-Box'>
-          <QuizBox nowQuiz={quiz[quizIndex]} />
+          <QuizBox
+            nowQuiz={quiz[quizIndex]}
+            index={quizIndex}
+            setIndex={setQuizIndex}
+            setClick={setGoNext}
+          />
+          <Button
+            variant='contained'
+            endIcon={<SendIcon />}
+            onClick={updateIndex}
+            disabled={goNext}
+          >
+            Send
+          </Button>
           <div className='Progress-Bar'>
-            <BorderLinearProgress variant='determinate' value={progress} />
-            <text className='Progress-Text'>{progress}%</text>
+            <BorderLinearProgress
+              variant='determinate'
+              value={quizIndex * 20}
+            />
+            <text className='Progress-Text'>{quizIndex * 20}%</text>
           </div>
         </div>
       </div>

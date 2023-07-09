@@ -25,11 +25,21 @@
 }
 
 .Header {
-  background-color: #e5e584;
+  background-color: #fff59d;
   height: calc(var(--vh, 1vh) * 10);
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.Misa-Face:hover {
+  opacity: 0.7;
 }
 .Body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: calc(var(--vh, 1vh) * 90);
 }
