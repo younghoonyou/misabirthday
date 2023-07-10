@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/misabirthday/static/css/main.2483114a.css",
+    "main.js": "/misabirthday/static/js/main.a5723c2c.js",
+    "static/media/PottaOne-Regular.ttf": "/misabirthday/static/media/PottaOne-Regular.359a6a8dfa58f1ead0ae.ttf",
+    "static/media/BagelFatOne-Regular.ttf": "/misabirthday/static/media/BagelFatOne-Regular.036565a8126d1bf2ae0c.ttf",
+    "static/media/Caprasimo-Regular.ttf": "/misabirthday/static/media/Caprasimo-Regular.1fb14e3bf85c52709856.ttf",
+    "index.html": "/misabirthday/index.html",
+    "main.2483114a.css.map": "/misabirthday/static/css/main.2483114a.css.map",
+    "main.a5723c2c.js.map": "/misabirthday/static/js/main.a5723c2c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2483114a.css",
+    "static/js/main.a5723c2c.js"
+  ]
+}
