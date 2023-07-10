@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 const Quiz3 = (props) => {
   const [selectedOption, setSelectedOption] = useState(null);
-  const { setGoNext } = props;
+  const {setGoNext, setAns} = props;
   const handleOptionChange = (e) => {
     const newValue = e.target.value;
     setSelectedOption(newValue === selectedOption ? null : newValue);
+    if (newValue === 'option1') {
+      setAns(true);
+    }
     setGoNext(false);
   };
 
   return (
     <div>
-      <div className='Japanese-Font'>美紗の出生地は？</div>
-      <div className='Korean-Font'>미사 출생지는3?</div>
-      <div className='English-Font'>Where was Misa born ?</div>
+      <div className='English-Font'>Q3.</div>
+      <div className='Japanese-Font'>🇯🇵 美紗の姓は？</div>
+      <div className='Korean-Font'>🇰🇷 미사의 이름 성은?</div>
+      <div className='English-Font'>🇨🇦 What is Misa Last name?</div>
       <div className='Check-Box'>
         <input
           type='radio'
@@ -21,9 +25,9 @@ const Quiz3 = (props) => {
           checked={selectedOption === 'option1'}
           onChange={handleOptionChange}
         />
-        <label className='Japanese-Font'> 京都</label>
-        <label className='Korean-Font'> 쿄토</label>
-        <label className='English-Font'> Kyoto</label>
+        <label className='Japanese-Font'> 山下 / </label>
+        <label className='Korean-Font'> 야마시타</label>
+        <label className='English-Font'> / Yamashita</label>
       </div>
       <div className='Check-Box'>
         <input
@@ -32,9 +36,9 @@ const Quiz3 = (props) => {
           checked={selectedOption === 'option2'}
           onChange={handleOptionChange}
         />
-        <label className='Japanese-Font'> 京都</label>
-        <label className='Korean-Font'> 쿄토</label>
-        <label className='English-Font'> Kyoto</label>
+        <label className='Japanese-Font'> 橋本 / </label>
+        <label className='Korean-Font'> 하시모토</label>
+        <label className='English-Font'> / Hashimoto</label>
       </div>
       <div className='Check-Box'>
         <input
@@ -43,9 +47,9 @@ const Quiz3 = (props) => {
           checked={selectedOption === 'option3'}
           onChange={handleOptionChange}
         />
-        <label className='Japanese-Font'> 京都</label>
-        <label className='Korean-Font'> 쿄토</label>
-        <label className='English-Font'> Kyoto</label>
+        <label className='Japanese-Font'> 鈴木 / </label>
+        <label className='Korean-Font'> 스즈키</label>
+        <label className='English-Font'> / Suzuki</label>
       </div>
       <div className='Check-Box'>
         <input
@@ -54,9 +58,9 @@ const Quiz3 = (props) => {
           checked={selectedOption === 'option4'}
           onChange={handleOptionChange}
         />
-        <label className='Japanese-Font'> 京都</label>
-        <label className='Korean-Font'> 쿄토</label>
-        <label className='English-Font'> Kyoto</label>
+        <label className='Japanese-Font'> 加藤 / </label>
+        <label className='Korean-Font'> 카토</label>
+        <label className='English-Font'> / Kato</label>
       </div>
     </div>
   );

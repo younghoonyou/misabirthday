@@ -29,8 +29,8 @@ const Header = () => {
       <text className='Japanese-Font'>私は可愛い美紗！</text>
       <div className='Duck-Moving'>
         <img
-          alt='walking-duck'
-          src='images/walking-duck.gif'
+          alt='walking-misa'
+          src='images/walking-misa.gif'
           width='60'
           height='60'
         />

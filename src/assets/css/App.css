@@ -37,6 +37,7 @@
 .Misa-Face:hover {
   opacity: 0.7;
 }
+
 .Body {
   display: flex;
   flex-direction: column;

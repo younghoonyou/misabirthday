@@ -1,6 +1,6 @@
 import './assets/css/App.css';
-import { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import {useEffect} from 'react';
+import {Routes, Route} from 'react-router-dom';
 import LandingPage from './pages/landingPage';
 import PrivateRoute from './lib/privateRoute';
 import QuizPage from './pages/quizPage';

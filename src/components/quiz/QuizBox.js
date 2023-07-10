@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import QuizResult from './QuizResult';
 const QuizBox = (props) => {
-  const { nowQuiz, index, setIndex } = props;
-  const [score, setScore] = useState(0);
+  const {nowQuiz, index, setIndex, score, fresh} = props;
   return index === 5 ? (
-    <QuizResult score={score} />
+    <QuizResult score={score} fresh={fresh} />
   ) : (
     <div className='Quiz-Box'>{nowQuiz}</div>
   );

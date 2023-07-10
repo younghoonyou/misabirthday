@@ -2,10 +2,13 @@ import React, {useState} from 'react';
 
 const Quiz1 = (props) => {
   const [selectedOption, setSelectedOption] = useState(null);
-  const {setGoNext} = props;
+  const {setGoNext, setAns} = props;
   const handleOptionChange = (e) => {
     const newValue = e.target.value;
     setSelectedOption(newValue === selectedOption ? null : newValue);
+    if (newValue === 'option3') {
+      setAns(true);
+    }
     setGoNext(false);
   };
 
