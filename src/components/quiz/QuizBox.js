@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import QuizResult from './QuizResult';
 const QuizBox = (props) => {
-  const {nowQuiz, index, setIndex, score, fresh} = props;
+  const {nowQuiz, index, score, fresh} = props;
   return index === 5 ? (
     <QuizResult score={score} fresh={fresh} />
   ) : (

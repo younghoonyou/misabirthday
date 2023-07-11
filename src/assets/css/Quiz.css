@@ -7,8 +7,14 @@
   font-size: 20px;
 }
 
+.Progress-Text {
+  margin-left: 30px;
+  font-family: 'Japanese-Font';
+  color: #cba637;
+}
+
 .Quiz-Result {
-  width: 40%;
+  width: 45%;
   height: 70%;
   background-color: #d0e7b6;
   border-radius: 20px;
@@ -32,6 +38,14 @@
   border-radius: 20px;
   width: 60%;
   height: 500px;
+}
+
+.Question-Leaf {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .Quiz-Box {

@@ -15,11 +15,11 @@ const QuizFail = (props) => {
       >
         {score}
       </div>
-      <text className='Japanese-Font'>
+      <div className='Japanese-Font'>
         おいおい、美紗についてもっと勉強しろ
-      </text>
-      <text className='Korean-Font'>이봐, 미사에 대해 더 공부해</text>
-      <text className='English-Font'>Hey, hey, study more about Misa</text>
+      </div>
+      <div className='Korean-Font'>이봐, 미사에 대해 더 공부해</div>
+      <div className='English-Font'>Hey, hey, study more about Misa</div>
       <div className='Button-Check'>
         <Button variant='contained' color='error' onClick={handleFail}>
           Fail

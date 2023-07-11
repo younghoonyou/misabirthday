@@ -6,7 +6,12 @@ const QuizPass = (props) => {
   const navigate = useNavigate();
   const {score} = props;
   const handlePass = () => {
-    localStorage.setItem('token', true);
+    const token = {
+      value: true,
+      expire: Date.now() + 10 * 60 * 1000, // 5 min
+    };
+    console.log(JSON.stringify(token));
+    localStorage.setItem('token', JSON.stringify(token));
     navigate('/main');
   };
   return (
@@ -18,9 +23,9 @@ const QuizPass = (props) => {
       >
         {score}
       </div>
-      <text className='Japanese-Font'>あなた、美紗の本当の友達だね</text>
-      <text className='Korean-Font'>당신, 미사의 진정한 친구군</text>
-      <text className='English-Font'>You're a true friend of Misa</text>
+      <div className='Japanese-Font'>あなた、美紗の本当の友達だね</div>
+      <div className='Korean-Font'>당신, 미사의 진정한 친구군</div>
+      <div className='English-Font'>You're a true friend of Misa</div>
       <div className='Button-Check'>
         <Button variant='contained' color='success' onClick={handlePass}>
           Pass

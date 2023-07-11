@@ -26,7 +26,7 @@ const Header = () => {
         />
       )}
       <img alt='light' src='images/light.png' width='70' height='70' />
-      <text className='Japanese-Font'>私は可愛い美紗！</text>
+      <div className='Japanese-Font'>私は可愛い美紗！</div>
       <div className='Duck-Moving'>
         <img
           alt='walking-misa'
@@ -42,7 +42,7 @@ const Header = () => {
         width='70'
         height='70'
       />
-      <text className='Japanese-Font'>お誕生日おめでとう</text>
+      <div className='Japanese-Font'>お誕生日おめでとう</div>
     </div>
   );
 };

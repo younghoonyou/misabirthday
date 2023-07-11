@@ -12,12 +12,7 @@ function setScreenSize() {
 function App() {
   useEffect(() => {
     setScreenSize();
-    const token = localStorage.token || sessionStorage.token;
-    if (token) {
-      // setAuthToken(token, isRemember);
-    }
   }, []);
-  // return <div className="App"></div>;
   return (
     <Routes>
       <Route path='/' element={<QuizPage />} exact />

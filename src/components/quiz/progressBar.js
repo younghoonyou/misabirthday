@@ -1,9 +1,9 @@
 import LinearProgress, {
   linearProgressClasses,
 } from '@mui/material/LinearProgress';
-import { styled } from '@mui/material/styles';
+import {styled} from '@mui/material/styles';
 
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+const BorderLinearProgress = styled(LinearProgress)(({theme}) => ({
   height: 10,
   borderRadius: 5,
   width: '50%',

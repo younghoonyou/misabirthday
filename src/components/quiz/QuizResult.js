@@ -4,7 +4,7 @@ import QuizPass from './QuizPass';
 
 const QuizResult = (props) => {
   const {score, fresh} = props;
-  return score >= 80 ? (
+  return score === 100 ? (
     <QuizPass score={score} />
   ) : (
     <QuizFail score={score} fresh={fresh} />
