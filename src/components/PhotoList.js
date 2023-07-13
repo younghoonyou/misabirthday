@@ -67,24 +67,10 @@ const PhotoList = () => {
         ssr
         className='Caruosel-Photo'
         autoPlay={autoPlay}
-        autoPlaySpeed={2000} // Set the autoplay speed to 1000ms (1 second)
-        infinite={true} // Enable infinite looping
-        arrows={false} // Show navigation arrows
+        autoPlaySpeed={2000}
+        infinite={true}
+        arrows={false}
       >
-        {/* <Carousel
-      // className='Caruosel-Photo' // responsive={responsive}
-      // arrows={false}
-      // showArrows={false}
-      // showStatus={false}
-      // showIndicators={false}
-      // showThumbs={false}
-      // infiniteLoop={true}
-      // transitionTime={500}
-      // emulateTouch={true}
-      // dynamicHeight={true}
-      // autoPlay={true}
-      // interval={2000}
-      > */}
         {images.map((image, idx) => {
           return (
             <img
@@ -99,17 +85,17 @@ const PhotoList = () => {
             />
           );
         })}
-        <Dialog open={selectedImage !== null} onClose={handleClose}>
-          <DialogContent>
-            <Typography variant='body1'>
-              <img src={selectedImage?.src} alt='Click 1' width='100%' />
-            </Typography>
-          </DialogContent>
-          <DialogTitle id='alert-dialog-title'>
-            {selectedImage?.description}
-          </DialogTitle>
-        </Dialog>
       </Carousel>
+      <Dialog open={selectedImage !== null} onClose={handleClose}>
+        <DialogContent>
+          <Typography>
+            <img src={selectedImage?.src} alt='Click 1' width='100%' />
+          </Typography>
+        </DialogContent>
+        <DialogTitle id='alert-dialog-title'>
+          {selectedImage?.description}
+        </DialogTitle>
+      </Dialog>
     </>
   );
 };
