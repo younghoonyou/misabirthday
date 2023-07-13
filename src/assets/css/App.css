@@ -22,6 +22,7 @@
   background-color: #ffffdf;
   display: auto;
   height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
 }
 
 .Header {
@@ -81,7 +82,7 @@
 }
 .Duck-Moving img {
   animation: slideAnimation 3s linear infinite;
-  margin-left: 300px;
+  margin-left: 40%;
 }
 
 @keyframes slideAnimation {

@@ -49,7 +49,7 @@ const Quiz4 = (props) => {
         />
         <label className='Japanese-Font'> 愛らしい /</label>
         <label className='Korean-Font'> 사랑스럽기</label>
-        <label className='English-Font'> / Lovely</label>
+        <label className='English-Font'> / Lovelyㅤ</label>
       </div>
       <div className='Check-Box'>
         <input

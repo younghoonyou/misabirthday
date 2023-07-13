@@ -27,7 +27,7 @@ const Quiz3 = (props) => {
         />
         <label className='Japanese-Font'> 山下 / </label>
         <label className='Korean-Font'> 야마시타</label>
-        <label className='English-Font'> / Yamashita</label>
+        <label className='English-Font'> / Yamashita ㅤㅤ </label>
       </div>
       <div className='Check-Box'>
         <input

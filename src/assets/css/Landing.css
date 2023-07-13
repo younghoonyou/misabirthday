@@ -1,0 +1,66 @@
+.Landing-page {
+  height: calc(var(--vh, 1vh) * 150);
+  background-color: #ffffdf;
+  display: auto;
+  width: 100%;
+}
+
+.Landing-Body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--vh, 1vh) * 150);
+}
+
+.Birthday-Writing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.Photo-zone {
+  height: 100%;
+}
+
+.Photo-List {
+  /* display: flex; */
+  /* flex-direction: row; */
+  width: 80%;
+  height: 40%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.Caruosel-Photo {
+  background-color: lightgray;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.Caruosel-Photo img {
+  background-color: aqua;
+  width: auto;
+  height: 250px;
+  max-height: 250px;
+  margin: auto;
+  display: block;
+}
+
+.Caruosel-Photo img:hover {
+  opacity: 0.7;
+}
+
+.HBD-Box {
+  width: 100%;
+  height: 100%;
+  background-color: violet;
+}
+
+.Gallery-photo {
+  border-radius: 30px;
+}

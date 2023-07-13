@@ -60,7 +60,7 @@ const Quiz1 = (props) => {
         />
         <label className='Japanese-Font'> 北海道 / </label>
         <label className='Korean-Font'> 훗카이도</label>
-        <label className='English-Font'> / Hokkaido</label>
+        <label className='English-Font'> / Hokkaido ㅤ</label>
       </div>
     </div>
   );
