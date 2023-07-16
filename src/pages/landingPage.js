@@ -10,11 +10,18 @@ const LandingPage = () => {
       <Header />
       <div className='Landing-Body'>
         <div className='Photo-List'>
+          <div className='Our-Memory'>
+            <img
+              className='Heart'
+              src='images/heart.png'
+              alt='heart'
+              width='70'
+            />
+            Our Memory
+          </div>
           <PhotoList />
         </div>
-        <div className='Birthday-Writing'>
-          <HBDletter />
-        </div>
+        <HBDletter />
       </div>
     </div>
   );

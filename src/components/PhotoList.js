@@ -30,7 +30,7 @@ const PhotoList = () => {
     },
     {
       src: 'images/movie.png',
-      description: 'Watching Movie 2023.05.24',
+      description: 'Watching Mario Movie 2023.05.24',
     },
     {src: 'images/Hollywood.png', description: 'US Holly-Wood 2023.05.29'},
     {src: 'images/us.png', description: 'Universial Studio 2023.05.30'},
@@ -60,7 +60,6 @@ const PhotoList = () => {
   };
   return (
     <>
-      <div className=''>Our Memories</div>
       <Carousel
         responsive={responsive}
         partialVisible
