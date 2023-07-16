@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import CreateIcon from '@mui/icons-material/Create';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import axios from 'axios';
 import {
   Button,
   Dialog,
@@ -27,14 +28,14 @@ const HBDletter = () => {
     setContext(event.target.value);
   };
   const contextData = {
-    jap: 'こんにちは',
+    jp: 'こんにちは',
     kor: '안녕',
     eng: 'Hello',
   };
   const [letters, setLetters] = useState([
-    <Letter writer={'Hoon'} context={contextData} lan={'Eng'} />,
-    <Letter writer={'Young'} context={contextData} lan={'Kor'} />,
-    <Letter writer={'YU'} context={contextData} lan={'Jap'} />,
+    <Letter writer={'Hoon'} context={contextData} lan={'eng'} />,
+    <Letter writer={'Young'} context={contextData} lan={'kor'} />,
+    <Letter writer={'YU'} context={contextData} lan={'jp'} />,
   ]);
 
   const handleClickOpen = () => {
@@ -43,9 +44,15 @@ const HBDletter = () => {
 
   const handleClose = () => {
     setOpen(false);
+    setPassword('');
+    setContext('');
   };
-
+  const BACKEND = `http://${process.env.BACKEND_IP}:${process.env.BACKEND_PORT}`;
+  const GetLetter = async () => {
+    const res = await axios.get({BACKEND} + '/api/letters');
+  };
   useEffect(() => {
+    // GetLetter();
     // get data using axios
     // writer, context, start_language -> cuz translation
     /*
@@ -70,7 +77,7 @@ const HBDletter = () => {
         <p className='Korean-Font'>편지쓰기</p>
         <p className='English-Font'> / Writing Letter</p>
         <button className='Letter-Button' onClick={handleClickOpen}>
-          <CreateIcon />
+          <AddCircleIcon />
         </button>
         <Dialog open={open} onClose={handleClose}>
           <DialogTitle style={{backgroundColor: '#ECC130'}}>
@@ -108,7 +115,9 @@ const HBDletter = () => {
             />
           </DialogContent>
           <DialogActions style={{backgroundColor: '#ECC130'}}>
-            <Button onClick={handleClose}>Cancel</Button>
+            <Button onClick={handleClose} variant='outlined' color='error'>
+              Cancel
+            </Button>
             <Button
               onClick={handleClose}
               variant='contained'
