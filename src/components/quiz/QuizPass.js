@@ -10,7 +10,6 @@ const QuizPass = (props) => {
       value: true,
       expire: Date.now() + 30 * 60 * 1000, // 30min
     };
-    console.log(JSON.stringify(token));
     localStorage.setItem('token', JSON.stringify(token));
     navigate('/main');
   };

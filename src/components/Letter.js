@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Collapse} from '@mui/material';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import CreateIcon from '@mui/icons-material/Create';
+import axios from 'axios';
 import {
   Button,
   Dialog,
@@ -14,7 +15,6 @@ import {
 const Letter = (props) => {
   const {writer, context, lan} = props;
   const [isExpanded, setIsExpanded] = useState(false);
-  const [Initwriter, setInitWriter] = useState(writer);
   const [open, setOpen] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
   const [password, setPassword] = useState('');
@@ -22,6 +22,14 @@ const Letter = (props) => {
   const [modifyContext, setModifyContext] = useState(() => {
     return context[lan];
   });
+
+  const Initwriter = writer;
+
+  const Hash = (data) => {
+    // return createHash('sha256')
+    //   .update(String(data) + process.env.HASH)
+    //   .digest('hex');
+  };
 
   const toggleCollapse = () => {
     setIsExpanded((prev) => !prev);
@@ -56,6 +64,20 @@ const Letter = (props) => {
     setOpenEdit(false);
     setPasswordEdit('');
     setModifyContext(context[lan]);
+  };
+
+  const handleDeleteSubmit = async () => {
+    // const res = await axios.delete('/api/delete_letter', {
+    //   data: {
+    //     password: Hash(passwordEdit),
+    //   },
+    // });
+    // if (res.status === 200) {
+    //   //pop up delete complete
+    //   handleClose();
+    // } else {
+    //   // shake and pop up password doesn't match
+    // }
   };
 
   const isSubmitDisabled = !password;
@@ -157,7 +179,7 @@ const Letter = (props) => {
               Cancel
             </Button>
             <Button
-              onClick={handleClose}
+              onClick={handleDeleteSubmit}
               variant='contained'
               color='primary'
               disabled={isSubmitDisabled}

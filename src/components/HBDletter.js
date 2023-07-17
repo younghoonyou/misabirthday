@@ -10,7 +10,6 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-
 import Letter from './Letter';
 const HBDletter = () => {
   const [open, setOpen] = useState(false);
@@ -33,9 +32,9 @@ const HBDletter = () => {
     eng: 'Hello',
   };
   const [letters, setLetters] = useState([
-    <Letter writer={'Hoon'} context={contextData} lan={'eng'} />,
-    <Letter writer={'Young'} context={contextData} lan={'kor'} />,
-    <Letter writer={'YU'} context={contextData} lan={'jp'} />,
+    <Letter writer={'Hoon'} context={contextData} lan={'eng'} key={0} />,
+    <Letter writer={'Young'} context={contextData} lan={'kor'} key={1} />,
+    <Letter writer={'YU'} context={contextData} lan={'jp'} key={2} />,
   ]);
 
   const handleClickOpen = () => {
@@ -49,7 +48,15 @@ const HBDletter = () => {
   };
   const BACKEND = `http://${process.env.BACKEND_IP}:${process.env.BACKEND_PORT}`;
   const GetLetter = async () => {
-    const res = await axios.get({BACKEND} + '/api/letters');
+    const res = await axios.get({BACKEND} + '/api/get_letter');
+    setLetters((prev) => [
+      ...prev,
+      <Letter
+        writer={res.data.writer}
+        context={res.data.context}
+        lan={res.data.language}
+      />,
+    ]);
   };
   useEffect(() => {
     // GetLetter();
@@ -67,7 +74,7 @@ const HBDletter = () => {
     setLetters(LetterList);
 
      */
-  });
+  }, [letters]);
   const isSubmitDisabled = !writer || !password || !context;
   return (
     <div className='Birthday-Writing'>
