@@ -70,7 +70,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  /* justify-content: space-between; */
 }
 
 .Cake {
@@ -78,7 +79,7 @@
   align-items: flex-end;
 }
 .Duck-Moving {
-  width: 60%;
+  width: 40%;
 }
 .Duck-Moving img {
   animation: slideAnimation 3s linear infinite;

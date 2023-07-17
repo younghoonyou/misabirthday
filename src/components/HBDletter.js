@@ -86,7 +86,18 @@ const HBDletter = () => {
         <button className='Letter-Button' onClick={handleClickOpen}>
           <AddCircleIcon />
         </button>
-        <Dialog open={open} onClose={handleClose}>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          sx={{
+            '& .MuiDialog-container': {
+              '& .MuiPaper-root': {
+                width: '60%',
+                maxWidth: '60%', // Set your width here
+              },
+            },
+          }}
+        >
           <DialogTitle style={{backgroundColor: '#ECC130'}}>
             <span className='Japanese-Font'>手紙 / </span>
             <span className='Korean-Font'>편지</span>

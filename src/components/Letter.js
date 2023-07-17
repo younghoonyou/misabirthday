@@ -100,14 +100,25 @@ const Letter = (props) => {
         >
           <CreateIcon />
         </button>
-        <Dialog open={openEdit} onClose={handleCloseEdit}>
+        <Dialog
+          open={openEdit}
+          onClose={handleCloseEdit}
+          sx={{
+            '& .MuiDialog-container': {
+              '& .MuiPaper-root': {
+                width: '60%',
+                maxWidth: '60%', // Set your width here
+              },
+            },
+          }}
+        >
           <DialogTitle style={{backgroundColor: '#ECC130'}}>
             <span className='Japanese-Font'>手紙 / </span>
             <span className='Korean-Font'>편지</span>
             <span className='English-Font'> / Letter</span>
           </DialogTitle>
           <DialogContent className='Writing-Form'>
-            <Typography>
+            <Typography style={{marginBottom: '14%'}}>
               <span className='English-Font'>Writer: {Initwriter}</span>
             </Typography>
             <Typography>
@@ -156,14 +167,26 @@ const Letter = (props) => {
         >
           <DeleteForeverIcon />
         </button>
-        <Dialog open={open} onClose={handleClose}>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          sx={{
+            '& .MuiDialog-container': {
+              '& .MuiPaper-root': {
+                width: '60%',
+                maxWidth: '60%', // Set your width here
+                height: '80%',
+              },
+            },
+          }}
+        >
           <DialogTitle style={{backgroundColor: '#ECC130'}}>
             <span className='Japanese-Font'>削除 / </span>
             <span className='Korean-Font'>삭제</span>
             <span className='English-Font'> / Delete</span>
           </DialogTitle>
           <DialogContent className='Writing-Form'>
-            <Typography>
+            <Typography style={{marginBottom: '3%'}}>
               <span className='English-Font'>Password:</span>
             </Typography>
             <input

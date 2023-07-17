@@ -16,7 +16,7 @@
 }
 
 .Birthday-Writing {
-  width: 80%;
+  width: 90%;
   height: 100%;
 }
 
@@ -25,9 +25,9 @@
 }
 
 .Photo-List {
-  width: 80%;
-  height: 40%;
-  margin-bottom: 10%;
+  width: 90%;
+  height: 80%;
+  margin-bottom: 5%;
 }
 
 .Caruosel-Photo {
@@ -65,9 +65,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 15%;
+  width: 25%;
   height: 25%;
-  font-size: large;
+  font-size: 40px;
   font-family: 'English-Font';
   border-radius: 25px;
   margin-top: 1%;
@@ -82,7 +82,7 @@
   text-align: center;
   background-color: bisque;
   border-radius: 25px;
-  width: 50%;
+  width: 60%;
   height: 15%;
   margin-bottom: 1%;
 }
@@ -100,13 +100,14 @@
 .Letter-Button {
   display: flex;
   background-color: rgb(226, 175, 113);
+  color: black;
   border-color: #0003;
   border-radius: 20px;
   align-items: center;
   justify-content: center;
   margin-left: 3%;
   width: 10%;
-  height: 50%;
+  height: 50px;
 }
 
 .Letter-Button:hover {
@@ -117,7 +118,6 @@
   width: 90%;
   margin-left: 5%;
   margin-top: 2%;
-
   height: 80px;
   border-radius: 20px;
   background-color: #d0e7b6 !important;
@@ -147,28 +147,16 @@
 }
 
 .Writing-Input {
+  width: 20%;
+  height: 40px;
+  font-size: 100%;
   margin-bottom: 8%;
   border-radius: 5px;
 }
 
-.swiped {
-  transform: translateX(-100px); /* adjust swipe distance as needed */
-}
-
-.delete-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px; /* adjust button width as needed */
-  height: 40px; /* adjust button height as needed */
-  background-color: red;
-  color: white;
-  border: none;
-}
-
 .Toggle-Update-Button {
-  width: 5%;
-  height: 40px;
+  width: 10%;
+  height: 60px;
   margin-left: 3%;
   border-radius: 30px;
   align-items: center;

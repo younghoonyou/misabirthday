@@ -101,7 +101,7 @@ const QuizPage = () => {
                 className='Duck-Button'
                 alt='duck'
                 src='images/duck.png'
-                width={70}
+                width={100}
                 disabled={goNext}
                 style={{opacity: goNext ? 0.5 : 1}}
                 onClick={updateIndex}

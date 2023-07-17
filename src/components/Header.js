@@ -26,7 +26,9 @@ const Header = () => {
         />
       )}
       <img alt='light' src='images/light.png' width='70' height='70' />
-      <div className='Japanese-Font'>私は可愛い美紗！</div>
+      <div className='Japanese-Font' style={{width: '20%'}}>
+        私は可愛い美紗！
+      </div>
       <div className='Duck-Moving'>
         <img
           alt='walking-misa'
