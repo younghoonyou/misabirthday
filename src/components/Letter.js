@@ -236,13 +236,13 @@ const Letter = (props) => {
           className='Japanese-Font'
           style={{marginLeft: '3%', fontSize: '250%'}}
         >
-          Japanese: {context.jp}
+          Japanese: {context.ja}
         </div>
         <div
           className='Korean-Font'
           style={{marginLeft: '3%', marginTop: '1%', fontSize: '250%'}}
         >
-          Korean: {context.kor}
+          Korean: {context.ko}
         </div>
         <div
           className='English-Font'
@@ -253,7 +253,7 @@ const Letter = (props) => {
             fontSize: '250%',
           }}
         >
-          English: {context.eng}
+          English: {context.en}
         </div>
       </Collapse>
     </>
