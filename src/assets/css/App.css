@@ -79,11 +79,11 @@
   align-items: flex-end;
 }
 .Duck-Moving {
-  width: 30%;
+  width: 10%;
 }
 .Duck-Moving img {
   animation: slideAnimation 3s linear infinite;
-  /* margin-left: 40%; */
+  /* margin-right: 40%; */
 }
 
 @keyframes slideAnimation {

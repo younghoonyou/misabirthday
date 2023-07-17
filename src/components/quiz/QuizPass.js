@@ -30,7 +30,7 @@ const QuizPass = (props) => {
         color='success'
         onClick={handlePass}
         className='Button-Check'
-        style={{marginTop: '5%'}}
+        style={{marginTop: '5%', fontSize: '250%'}}
       >
         Pass
       </Button>

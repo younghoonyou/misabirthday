@@ -23,7 +23,7 @@ const QuizFail = (props) => {
         color='error'
         onClick={handleFail}
         className='Button-Check'
-        style={{marginTop: '5%'}}
+        style={{marginTop: '5%', fontSize: '250%'}}
       >
         Fail
       </Button>
