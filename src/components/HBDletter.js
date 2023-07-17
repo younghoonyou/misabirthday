@@ -80,11 +80,17 @@ const HBDletter = () => {
     <div className='Birthday-Writing'>
       <div className='Post-write'>
         <img src='images/post.png' alt='post' width='15%' />
-        <p className='Japanese-Font'>手紙を書く / </p>
-        <p className='Korean-Font'>편지쓰기</p>
-        <p className='English-Font'> / Writing Letter</p>
+        <p className='Japanese-Font' style={{fontSize: '50px'}}>
+          手紙を書く /
+        </p>
+        <p className='Korean-Font' style={{fontSize: '50px'}}>
+          편지쓰기
+        </p>
+        <p className='English-Font' style={{fontSize: '50px'}}>
+          / Writing Letter
+        </p>
         <button className='Letter-Button' onClick={handleClickOpen}>
-          <AddCircleIcon />
+          <AddCircleIcon style={{fontSize: '50px'}} />
         </button>
         <Dialog
           open={open}
@@ -92,8 +98,8 @@ const HBDletter = () => {
           sx={{
             '& .MuiDialog-container': {
               '& .MuiPaper-root': {
-                width: '60%',
-                maxWidth: '60%', // Set your width here
+                width: '90%',
+                maxWidth: '90%', // Set your width here
               },
             },
           }}

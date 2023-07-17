@@ -98,7 +98,7 @@ const Letter = (props) => {
           }}
           onClick={handleClickOpenEdit}
         >
-          <CreateIcon />
+          <CreateIcon style={{fontSize: '50px'}} />
         </button>
         <Dialog
           open={openEdit}
@@ -106,23 +106,34 @@ const Letter = (props) => {
           sx={{
             '& .MuiDialog-container': {
               '& .MuiPaper-root': {
-                width: '60%',
-                maxWidth: '60%', // Set your width here
+                width: '90%',
+                maxWidth: '90%', // Set your width here
               },
             },
           }}
         >
           <DialogTitle style={{backgroundColor: '#ECC130'}}>
-            <span className='Japanese-Font'>手紙 / </span>
-            <span className='Korean-Font'>편지</span>
-            <span className='English-Font'> / Letter</span>
+            <span className='Japanese-Font' style={{fontSize: '45px'}}>
+              手紙 /{' '}
+            </span>
+            <span className='Korean-Font' style={{fontSize: '45px'}}>
+              편지
+            </span>
+            <span className='English-Font' style={{fontSize: '45px'}}>
+              {' '}
+              / Letter
+            </span>
           </DialogTitle>
           <DialogContent className='Writing-Form'>
-            <Typography style={{marginBottom: '14%'}}>
-              <span className='English-Font'>Writer: {Initwriter}</span>
+            <Typography style={{marginBottom: '3%'}}>
+              <span className='English-Font' style={{fontSize: '45px'}}>
+                Writer: {Initwriter}
+              </span>
             </Typography>
             <Typography>
-              <span className='English-Font'>Password:</span>
+              <span className='English-Font' style={{fontSize: '45px'}}>
+                Password:
+              </span>
             </Typography>
             <input
               type='password'
@@ -133,6 +144,7 @@ const Letter = (props) => {
             />
             <TextField
               label='手紙 / 편지 / Letter'
+              inputProps={{style: {fontSize: '30px'}}}
               multiline
               value={modifyContext}
               defaultValue={modifyContext}
@@ -165,7 +177,7 @@ const Letter = (props) => {
           }}
           onClick={handleClickOpen}
         >
-          <DeleteForeverIcon />
+          <DeleteForeverIcon style={{fontSize: '50px'}} />
         </button>
         <Dialog
           open={open}
@@ -173,21 +185,30 @@ const Letter = (props) => {
           sx={{
             '& .MuiDialog-container': {
               '& .MuiPaper-root': {
-                width: '60%',
-                maxWidth: '60%', // Set your width here
+                width: '90%',
+                maxWidth: '90%', // Set your width here
                 height: '80%',
               },
             },
           }}
         >
           <DialogTitle style={{backgroundColor: '#ECC130'}}>
-            <span className='Japanese-Font'>削除 / </span>
-            <span className='Korean-Font'>삭제</span>
-            <span className='English-Font'> / Delete</span>
+            <span className='Japanese-Font' style={{fontSize: '45px'}}>
+              削除 /
+            </span>
+            <span className='Korean-Font' style={{fontSize: '45px'}}>
+              삭제
+            </span>
+            <span className='English-Font' style={{fontSize: '45px'}}>
+              {' '}
+              / Delete
+            </span>
           </DialogTitle>
           <DialogContent className='Writing-Form'>
             <Typography style={{marginBottom: '3%'}}>
-              <span className='English-Font'>Password:</span>
+              <span className='English-Font' style={{fontSize: '45px'}}>
+                Password:
+              </span>
             </Typography>
             <input
               type='password'
@@ -211,18 +232,26 @@ const Letter = (props) => {
             </Button>
           </DialogActions>
         </Dialog>
-        <div className='Japanese-Font' style={{marginLeft: '3%'}}>
+        <div
+          className='Japanese-Font'
+          style={{marginLeft: '3%', fontSize: '250%'}}
+        >
           Japanese: {context.jp}
         </div>
         <div
           className='Korean-Font'
-          style={{marginLeft: '3%', marginTop: '1%'}}
+          style={{marginLeft: '3%', marginTop: '1%', fontSize: '250%'}}
         >
           Korean: {context.kor}
         </div>
         <div
           className='English-Font'
-          style={{marginLeft: '3%', marginTop: '1%', marginBottom: '2%'}}
+          style={{
+            marginLeft: '3%',
+            marginTop: '1%',
+            marginBottom: '2%',
+            fontSize: '250%',
+          }}
         >
           English: {context.eng}
         </div>

@@ -13,7 +13,7 @@ const Quiz3 = (props) => {
   };
 
   return (
-    <div>
+    <div className='Quiz-question'>
       <div className='English-Font'>Q3.</div>
       <div className='Japanese-Font'>🇯🇵 美紗の姓は？</div>
       <div className='Korean-Font'>🇰🇷 미사의 이름 성은?</div>
