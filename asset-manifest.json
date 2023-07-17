@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/misabirthday/static/css/main.59c41ac7.css",
-    "main.js": "/misabirthday/static/js/main.ea3bc48d.js",
+    "main.css": "/misabirthday/static/css/main.8be37b97.css",
+    "main.js": "/misabirthday/static/js/main.0fb416ea.js",
     "static/media/PottaOne-Regular.ttf": "/misabirthday/static/media/PottaOne-Regular.359a6a8dfa58f1ead0ae.ttf",
     "static/media/BagelFatOne-Regular.ttf": "/misabirthday/static/media/BagelFatOne-Regular.036565a8126d1bf2ae0c.ttf",
     "static/media/writing-form.png": "/misabirthday/static/media/writing-form.47274734bfd463fe387c.png",
@@ -10,11 +10,11 @@
     "static/media/revicons.ttf": "/misabirthday/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/misabirthday/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/misabirthday/index.html",
-    "main.59c41ac7.css.map": "/misabirthday/static/css/main.59c41ac7.css.map",
-    "main.ea3bc48d.js.map": "/misabirthday/static/js/main.ea3bc48d.js.map"
+    "main.8be37b97.css.map": "/misabirthday/static/css/main.8be37b97.css.map",
+    "main.0fb416ea.js.map": "/misabirthday/static/js/main.0fb416ea.js.map"
   },
   "entrypoints": [
-    "static/css/main.59c41ac7.css",
-    "static/js/main.ea3bc48d.js"
+    "static/css/main.8be37b97.css",
+    "static/js/main.0fb416ea.js"
   ]
 }
