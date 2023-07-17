@@ -80,13 +80,13 @@ const HBDletter = () => {
     <div className='Birthday-Writing'>
       <div className='Post-write'>
         <img src='images/post.png' alt='post' width='15%' />
-        <p className='Japanese-Font' style={{fontSize: '40px'}}>
+        <p className='Japanese-Font' style={{fontSize: '30px'}}>
           手紙を書く /
         </p>
-        <p className='Korean-Font' style={{fontSize: '40px'}}>
+        <p className='Korean-Font' style={{fontSize: '30px'}}>
           편지쓰기
         </p>
-        <p className='English-Font' style={{fontSize: '40px'}}>
+        <p className='English-Font' style={{fontSize: '30px'}}>
           / Writing Letter
         </p>
         <button className='Letter-Button' onClick={handleClickOpen}>
