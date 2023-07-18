@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import Alert from '@mui/material/Alert';
 import {firestore} from '../lib/firebase';
 import {
   Button,
@@ -17,7 +18,8 @@ const HBDletter = () => {
   const [password, setPassword] = useState('');
   const [context, setContext] = useState('');
   const [letters, setLetters] = useState([]);
-
+  const [alertSignal, setAlertSignal] = useState(false);
+  const [render, setRender] = useState(false);
   const handleWriterChange = (event) => {
     setWriter(event.target.value);
   };
@@ -44,6 +46,10 @@ const HBDletter = () => {
         .set(addData)
         .then(() => {
           console.log('Document written with ID: ', writer);
+          setAlertSignal(true);
+          setTimeout(() => {
+            setAlertSignal(false);
+          }, 3000);
         });
       handleClose();
     } catch (e) {
@@ -89,11 +95,26 @@ const HBDletter = () => {
 
   useEffect(() => {
     getCollectionData(); // Get letters
+    setAlertSignal(false);
+    setOpen(false);
+    setPassword('');
+    setContext('');
+    setWriter('');
+    setLetters([]);
   }, []);
+
+  useEffect(() => {
+    getCollectionData(); // Get letters
+  }, [alertSignal]);
 
   const isSubmitDisabled = !writer || !password || !context;
   return (
     <div className='Birthday-Writing'>
+      {alertSignal && (
+        <Alert severity='success' className='Letter-Alert'>
+          手紙完了 / 편지완료 / Letter Complete
+        </Alert>
+      )}
       <div className='Post-write'>
         <img src='images/post.png' alt='post' width='15%' />
         <p className='Japanese-Font' style={{fontSize: '30px'}}>
