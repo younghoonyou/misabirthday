@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Collapse} from '@mui/material';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import CreateIcon from '@mui/icons-material/Create';
-import axios from 'axios';
+import {firestore} from '../lib/firebase';
 import {
   Button,
   Dialog,
@@ -13,23 +13,15 @@ import {
   Typography,
 } from '@mui/material';
 const Letter = (props) => {
-  const {writer, context, lan} = props;
+  const {writer, context, origin} = props;
   const [isExpanded, setIsExpanded] = useState(false);
   const [open, setOpen] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
   const [password, setPassword] = useState('');
   const [passwordEdit, setPasswordEdit] = useState('');
-  const [modifyContext, setModifyContext] = useState(() => {
-    return context[lan];
-  });
+  const [modifyContext, setModifyContext] = useState(origin);
 
   const Initwriter = writer;
-
-  const Hash = (data) => {
-    // return createHash('sha256')
-    //   .update(String(data) + process.env.HASH)
-    //   .digest('hex');
-  };
 
   const toggleCollapse = () => {
     setIsExpanded((prev) => !prev);
@@ -63,20 +55,31 @@ const Letter = (props) => {
   const handleCloseEdit = () => {
     setOpenEdit(false);
     setPasswordEdit('');
-    setModifyContext(context[lan]);
+    setModifyContext(origin);
   };
 
   const handleDeleteSubmit = async () => {
-    // const res = await axios.delete('/api/delete_letter', {
-    //   data: {
-    //     password: Hash(passwordEdit),
-    //   },
-    // });
-    // if (res.status === 200) {
-    //   //pop up delete complete
+    // try {
+    // } catch (e) {
+    //   console.error(`Password doesn't match`, e);
+    // }
+  };
+
+  const handleUpdateSubmit = async () => {
+    // try {
+    //   const collectionRef = firestore.collection('letter');
+    //   const addData = {};
+    //   addData['pw'] = password;
+    //   addData['context'] = modifyContext;
+    //   await collectionRef
+    //     .doc(writer)
+    //     .set(addData)
+    //     .then(() => {
+    //       console.log('Document written with ID: ', writer);
+    //     });
     //   handleClose();
-    // } else {
-    //   // shake and pop up password doesn't match
+    // } catch (e) {
+    //   console.error('Error adding data:', e);
     // }
   };
 
