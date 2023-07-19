@@ -73,7 +73,6 @@ const HBDletter = () => {
         id: doc.id,
         ...doc.data(),
       }));
-      console.log(letterData);
       const LetterList = letterData.map((data, idx) => {
         const Context = {
           ja: data['translated']['ja'],
