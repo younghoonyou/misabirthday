@@ -271,9 +271,8 @@ const Letter = (props) => {
           sx={{
             '& .MuiDialog-container': {
               '& .MuiPaper-root': {
-                width: '90%',
-                maxWidth: '90%', // Set your width here
-                height: '80%',
+                width: '70%',
+                maxWidth: '70%', // Set your width here
               },
             },
           }}
@@ -291,7 +290,7 @@ const Letter = (props) => {
             </span>
           </DialogTitle>
           <DialogContent className='Writing-Form'>
-            <Typography style={{marginBottom: '3%'}}>
+            <Typography style={{marginBottom: '10%'}}>
               <span className='English-Font' style={{fontSize: '45px'}}>
                 Password:
               </span>

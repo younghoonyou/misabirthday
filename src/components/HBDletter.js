@@ -184,7 +184,12 @@ const HBDletter = () => {
             />
           </DialogContent>
           <DialogActions style={{backgroundColor: '#ECC130'}}>
-            <Button onClick={handleClose} variant='outlined' color='error'>
+            <Button
+              onClick={handleClose}
+              variant='outlined'
+              color='error'
+              className='Letter-Pass'
+            >
               Cancel
             </Button>
             <Button
@@ -192,6 +197,7 @@ const HBDletter = () => {
               variant='contained'
               color='primary'
               disabled={isSubmitDisabled}
+              className='Letter-Pass'
             >
               Submit
             </Button>
