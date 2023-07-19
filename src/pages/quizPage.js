@@ -13,7 +13,6 @@ import Header from '../components/Header';
 const QuizPage = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [start, setStart] = useState(false);
-  const [progress, setProgress] = useState(0);
   const [quizIndex, setQuizIndex] = useState(0);
   const [goNext, setGoNext] = useState(true);
   const [ans, setAns] = useState(false);
@@ -26,12 +25,8 @@ const QuizPage = () => {
     <Quiz5 setGoNext={setGoNext} setAns={setAns} />,
   ];
 
-  const handleHover = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
+  const handleClickImage = () => {
+    setIsHovered(!isHovered);
   };
 
   const startQuiz = () => {
@@ -44,12 +39,12 @@ const QuizPage = () => {
         <div className='Start-Box'>
           <img alt='paper-rain' src='images/paper-rain.gif' height='120%' />
           <img
-            alt='Before-misa'
+            alt={isHovered ? 'After-misa.png' : 'Before-misa'}
             src={isHovered ? 'images/after-misa.png' : 'images/before-misa.png'}
-            onMouseEnter={handleHover}
-            onMouseLeave={handleMouseLeave}
+            onClick={handleClickImage}
             width='400'
             height='400'
+            className='Misa-Cute'
           />
           <img alt='paper-rain' src='images/paper-rain.gif' height='120%' />
         </div>
@@ -65,7 +60,6 @@ const QuizPage = () => {
   };
 
   const RefreshState = () => {
-    setProgress(0);
     setQuizIndex(0);
     setGoNext(true);
     setAns(false);

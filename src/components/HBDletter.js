@@ -19,7 +19,8 @@ const HBDletter = () => {
   const [context, setContext] = useState('');
   const [letters, setLetters] = useState([]);
   const [alertSignal, setAlertSignal] = useState(false);
-  const [render, setRender] = useState(false);
+  const [deleteAlert, setDeleteAlert] = useState(false);
+  const [updateAlert, setUpdateAlert] = useState(false);
   const handleWriterChange = (event) => {
     setWriter(event.target.value);
   };
@@ -61,6 +62,7 @@ const HBDletter = () => {
     setOpen(false);
     setPassword('');
     setContext('');
+    setWriter('');
   };
 
   const getCollectionData = async () => {
@@ -83,6 +85,10 @@ const HBDletter = () => {
             writer={data.id}
             context={Context}
             origin={data.context}
+            deleteAlert={deleteAlert}
+            updateAlert={updateAlert}
+            setDeleteAlert={setDeleteAlert}
+            setUpdateAlert={setUpdateAlert}
             key={idx}
           />
         );
@@ -101,11 +107,13 @@ const HBDletter = () => {
     setContext('');
     setWriter('');
     setLetters([]);
+    setDeleteAlert(false);
+    setAlertSignal(false);
   }, []);
 
   useEffect(() => {
     getCollectionData(); // Get letters
-  }, [alertSignal]);
+  }, [alertSignal, deleteAlert, updateAlert]);
 
   const isSubmitDisabled = !writer || !password || !context;
   return (

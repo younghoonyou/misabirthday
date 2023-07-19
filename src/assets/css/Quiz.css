@@ -99,6 +99,10 @@ input[type='radio'] {
   width: 90%;
 }
 
+.Misa-Cute:hover {
+  opacity: 0.7;
+}
+
 @font-face {
   font-family: 'English-Font';
   src: url('../fonts/Caprasimo-Regular.ttf');

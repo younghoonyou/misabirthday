@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Collapse} from '@mui/material';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import CreateIcon from '@mui/icons-material/Create';
 import {firestore} from '../lib/firebase';
+import Alert from '@mui/material/Alert';
+import {updateDoc} from 'firebase/firestore';
 import {
   Button,
   Dialog,
@@ -13,13 +15,22 @@ import {
   Typography,
 } from '@mui/material';
 const Letter = (props) => {
-  const {writer, context, origin} = props;
+  const {
+    writer,
+    context,
+    origin,
+    deleteAlert,
+    setDeleteAlert,
+    updateAlert,
+    setUpdateAlert,
+  } = props;
   const [isExpanded, setIsExpanded] = useState(false);
   const [open, setOpen] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
   const [password, setPassword] = useState('');
   const [passwordEdit, setPasswordEdit] = useState('');
   const [modifyContext, setModifyContext] = useState(origin);
+  const [errorPW, setErrorPW] = useState(true);
 
   const Initwriter = writer;
 
@@ -59,34 +70,98 @@ const Letter = (props) => {
   };
 
   const handleDeleteSubmit = async () => {
-    // try {
-    // } catch (e) {
-    //   console.error(`Password doesn't match`, e);
-    // }
+    try {
+      const docRef = firestore.collection('letter').doc(writer);
+      const documentSnapshot = await docRef.get();
+      if (documentSnapshot.exists) {
+        const documentData = documentSnapshot.data();
+        const firbasePW = documentData.pw;
+        if (firbasePW === password) {
+          handleClose();
+          await docRef.delete();
+          setDeleteAlert(true);
+          setTimeout(() => {
+            setDeleteAlert(false);
+          }, 3000);
+          console.log('Document deleted successfully!');
+        } else {
+          setErrorPW(false);
+          setTimeout(() => {
+            setErrorPW(true);
+          }, 1000);
+          console.log('Password does not match.');
+        }
+      } else {
+        setErrorPW(false);
+        setTimeout(() => {
+          setErrorPW(true);
+        }, 1000);
+        console.log('No such document!');
+      }
+    } catch (error) {
+      setErrorPW(false);
+      setTimeout(() => {
+        setErrorPW(true);
+      }, 1000);
+      console.error('Error fetching document:', error);
+    }
   };
 
   const handleUpdateSubmit = async () => {
-    // try {
-    //   const collectionRef = firestore.collection('letter');
-    //   const addData = {};
-    //   addData['pw'] = password;
-    //   addData['context'] = modifyContext;
-    //   await collectionRef
-    //     .doc(writer)
-    //     .set(addData)
-    //     .then(() => {
-    //       console.log('Document written with ID: ', writer);
-    //     });
-    //   handleClose();
-    // } catch (e) {
-    //   console.error('Error adding data:', e);
-    // }
+    try {
+      const docRef = firestore.collection('letter').doc(writer);
+      const documentSnapshot = await docRef.get();
+      if (documentSnapshot.exists) {
+        const documentData = documentSnapshot.data();
+        const firbasePW = documentData.pw;
+        if (firbasePW === passwordEdit) {
+          handleCloseEdit();
+          await updateDoc(docRef, {
+            context: modifyContext,
+          });
+          setUpdateAlert(true);
+          setTimeout(() => {
+            setUpdateAlert(false);
+          }, 3000);
+          console.log('Document Update successfully!');
+        } else {
+          setErrorPW(false);
+          setTimeout(() => {
+            setErrorPW(true);
+          }, 1000);
+          console.log('Password does not match.');
+        }
+      } else {
+        setErrorPW(false);
+        setTimeout(() => {
+          setErrorPW(true);
+        }, 1000);
+        console.log('No such document!');
+      }
+    } catch (error) {
+      setErrorPW(false);
+      setTimeout(() => {
+        setErrorPW(true);
+      }, 1000);
+      console.error('Error fetching document:', error);
+    }
   };
 
   const isSubmitDisabled = !password;
   const isSubmitDisabledEdit = !passwordEdit | !modifyContext;
+  useEffect(() => {}, []);
   return (
     <>
+      {deleteAlert && (
+        <Alert severity='success' className='Letter-Alert'>
+          手紙の削除 / 편지 삭제 / Letter Deleted
+        </Alert>
+      )}
+      {updateAlert && (
+        <Alert severity='success' className='Letter-Alert'>
+          手紙の修正 / 편지 수정 / Letter Update
+        </Alert>
+      )}
       <button className='Toggle-Button English-Font' onClick={toggleCollapse}>
         <div>Writer : {writer}</div>
       </button>
@@ -157,16 +232,24 @@ const Letter = (props) => {
             />
           </DialogContent>
           <DialogActions style={{backgroundColor: '#ECC130'}}>
-            <Button onClick={handleCloseEdit} variant='outlined' color='error'>
+            <Button
+              onClick={handleCloseEdit}
+              variant='outlined'
+              color='error'
+              className='Letter-Pass'
+            >
               Cancel
             </Button>
             <Button
-              onClick={handleCloseEdit}
+              onClick={handleUpdateSubmit}
               variant='contained'
               color='primary'
+              width='100%'
               disabled={isSubmitDisabledEdit}
+              className={errorPW ? 'Letter-Pass' : 'Letter-Error'}
+              style={errorPW ? {} : {backgroundColor: 'red'}}
             >
-              Submit
+              Update
             </Button>
           </DialogActions>
         </Dialog>
@@ -222,7 +305,12 @@ const Letter = (props) => {
             />
           </DialogContent>
           <DialogActions style={{backgroundColor: '#ECC130'}}>
-            <Button onClick={handleClose} variant='outlined' color='error'>
+            <Button
+              onClick={handleClose}
+              variant='outlined'
+              color='error'
+              className='Letter-Pass'
+            >
               Cancel
             </Button>
             <Button
@@ -230,6 +318,8 @@ const Letter = (props) => {
               variant='contained'
               color='primary'
               disabled={isSubmitDisabled}
+              className={errorPW ? 'Letter-Pass' : 'Letter-Error'}
+              style={errorPW ? {} : {backgroundColor: 'red'}}
             >
               Delete
             </Button>
