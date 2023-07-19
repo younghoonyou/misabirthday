@@ -7,7 +7,7 @@ import ScrollToTop from './lib/scrolltoTop';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
-  <HashRouter>
+  <HashRouter basename='/'>
     <ScrollToTop>
       <App />
     </ScrollToTop>
