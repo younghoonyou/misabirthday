@@ -37,16 +37,16 @@ const QuizPage = () => {
     return (
       <>
         <div className='Start-Box'>
-          <img alt='paper-rain' src='images/paper-rain.gif' height='120%' />
+          <img alt='paper-rain' src='images/paper-rain.gif' height='100%' />
           <img
             alt={isHovered ? 'After-misa.png' : 'Before-misa'}
             src={isHovered ? 'images/after-misa.png' : 'images/before-misa.png'}
             onClick={handleClickImage}
-            width='400'
-            height='400'
+            width='600'
+            height='600'
             className='Misa-Cute'
           />
-          <img alt='paper-rain' src='images/paper-rain.gif' height='120%' />
+          <img alt='paper-rain' src='images/paper-rain.gif' height='100%' />
         </div>
         <button
           className='Start-Button'
@@ -95,7 +95,7 @@ const QuizPage = () => {
                 className='Duck-Button'
                 alt='duck'
                 src='images/duck.png'
-                width={100}
+                width={200}
                 disabled={goNext}
                 style={{opacity: goNext ? 0.5 : 1}}
                 onClick={updateIndex}

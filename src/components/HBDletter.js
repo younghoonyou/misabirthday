@@ -124,13 +124,13 @@ const HBDletter = () => {
       )}
       <div className='Post-write'>
         <img src='images/post.png' alt='post' width='15%' />
-        <p className='Japanese-Font' style={{fontSize: '30px'}}>
+        <p className='Japanese-Font' style={{fontSize: '35px'}}>
           手紙を書く /
         </p>
-        <p className='Korean-Font' style={{fontSize: '30px'}}>
+        <p className='Korean-Font' style={{fontSize: '35px'}}>
           편지쓰기
         </p>
-        <p className='English-Font' style={{fontSize: '30px'}}>
+        <p className='English-Font' style={{fontSize: '35px'}}>
           / Writing Letter
         </p>
         <button className='Letter-Button' onClick={handleClickOpen}>
