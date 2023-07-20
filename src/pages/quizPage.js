@@ -37,7 +37,7 @@ const QuizPage = () => {
     return (
       <>
         <div className='Start-Box'>
-          <img alt='paper-rain' src='images/paper-rain.gif' height='100%' />
+          <img alt='paper-rain' src='images/paper-rain.gif' height='120%' />
           <img
             alt={isHovered ? 'After-misa.png' : 'Before-misa'}
             src={isHovered ? 'images/after-misa.png' : 'images/before-misa.png'}
@@ -46,7 +46,7 @@ const QuizPage = () => {
             height='600'
             className='Misa-Cute'
           />
-          <img alt='paper-rain' src='images/paper-rain.gif' height='100%' />
+          <img alt='paper-rain' src='images/paper-rain.gif' height='120%' />
         </div>
         <button
           className='Start-Button'
