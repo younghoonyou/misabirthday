@@ -9,7 +9,6 @@ import Quiz4 from '../components/quiz/Quiz4';
 import Quiz5 from '../components/quiz/Quiz5';
 import QuizBox from '../components/quiz/QuizBox';
 import Header from '../components/Header';
-import useSound from 'use-sound';
 import DuckSound from '../assets/sounds/duck.mp3';
 
 const QuizPage = () => {
@@ -19,7 +18,7 @@ const QuizPage = () => {
   const [goNext, setGoNext] = useState(true);
   const [ans, setAns] = useState(false);
   const [score, setScore] = useState(0);
-  const [soundPlay] = useSound(DuckSound);
+  const audio = new Audio(DuckSound);
 
   const quiz = [
     <Quiz1 setGoNext={setGoNext} setAns={setAns} />,
@@ -71,7 +70,7 @@ const QuizPage = () => {
   };
 
   const updateIndex = () => {
-    soundPlay();
+    audio.play();
     if (!goNext) {
       setQuizIndex(quizIndex + 1);
     }
