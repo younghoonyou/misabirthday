@@ -37,6 +37,14 @@ const PhotoList = () => {
     {src: 'images/mario.png', description: 'Mario! 2023.05.30'},
     {src: 'images/canadaDay.png', description: 'Canada Day 2023.07.01'},
     {src: 'images/victoria.png', description: 'Victoria 2023.07.03'},
+    {
+      src: 'images/night_market.png',
+      description: 'Richmond Night market 2023.07.30',
+    },
+    {
+      src: 'images/soccer.png',
+      description: 'Tigres(Win) VS Whitecaps 2023.08.04',
+    },
   ];
 
   const responsive = {

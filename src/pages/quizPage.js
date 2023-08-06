@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import '../assets/css/App.css';
 import '../assets/css/Quiz.css';
 import BorderLinearProgress from '../components/quiz/progressBar';
@@ -9,6 +9,8 @@ import Quiz4 from '../components/quiz/Quiz4';
 import Quiz5 from '../components/quiz/Quiz5';
 import QuizBox from '../components/quiz/QuizBox';
 import Header from '../components/Header';
+import useSound from 'use-sound';
+import DuckSound from '../assets/sounds/duck.mp3';
 
 const QuizPage = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -17,6 +19,8 @@ const QuizPage = () => {
   const [goNext, setGoNext] = useState(true);
   const [ans, setAns] = useState(false);
   const [score, setScore] = useState(0);
+  const [soundPlay] = useSound(DuckSound);
+
   const quiz = [
     <Quiz1 setGoNext={setGoNext} setAns={setAns} />,
     <Quiz2 setGoNext={setGoNext} setAns={setAns} />,
@@ -67,6 +71,7 @@ const QuizPage = () => {
   };
 
   const updateIndex = () => {
+    soundPlay();
     if (!goNext) {
       setQuizIndex(quizIndex + 1);
     }
