@@ -1,20 +1,23 @@
 {
   "files": {
     "main.css": "/misabirthday/static/css/main.dd227e38.css",
-    "main.js": "/misabirthday/static/js/main.47689cc9.js",
+    "main.js": "/misabirthday/static/js/main.4e5910b7.js",
+    "static/js/845.d017c445.chunk.js": "/misabirthday/static/js/845.d017c445.chunk.js",
     "static/media/PottaOne-Regular.ttf": "/misabirthday/static/media/PottaOne-Regular.359a6a8dfa58f1ead0ae.ttf",
     "static/media/BagelFatOne-Regular.ttf": "/misabirthday/static/media/BagelFatOne-Regular.036565a8126d1bf2ae0c.ttf",
     "static/media/writing-form.png": "/misabirthday/static/media/writing-form.47274734bfd463fe387c.png",
+    "static/media/duck.mp3": "/misabirthday/static/media/duck.d2315386a1e5028e66e0.mp3",
     "static/media/Caprasimo-Regular.ttf": "/misabirthday/static/media/Caprasimo-Regular.1fb14e3bf85c52709856.ttf",
     "static/media/revicons.eot": "/misabirthday/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/misabirthday/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/misabirthday/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/misabirthday/index.html",
     "main.dd227e38.css.map": "/misabirthday/static/css/main.dd227e38.css.map",
-    "main.47689cc9.js.map": "/misabirthday/static/js/main.47689cc9.js.map"
+    "main.4e5910b7.js.map": "/misabirthday/static/js/main.4e5910b7.js.map",
+    "845.d017c445.chunk.js.map": "/misabirthday/static/js/845.d017c445.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dd227e38.css",
-    "static/js/main.47689cc9.js"
+    "static/js/main.4e5910b7.js"
   ]
 }
