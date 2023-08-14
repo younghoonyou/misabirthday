@@ -45,6 +45,14 @@ const PhotoList = () => {
       src: 'images/soccer.png',
       description: 'Tigres(Win) VS Whitecaps 2023.08.04',
     },
+    {
+      src: 'images/misa_party.png',
+      description: 'Party for Misa birthday in Guu 2023.08.11',
+    },
+    {
+      src: 'images/misa_birthday.png',
+      description: 'Happy Birthday Misa!!! 2023.08.12',
+    },
   ];
 
   const responsive = {
